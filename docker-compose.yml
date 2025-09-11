@@ -1,8 +1,9 @@
 services:
   demo-api:
-    build: .
-    image: demo-api:local
+    image: docker.io/lschifferx/demo-api:latest
+    container_name: demo-api
     ports:
       - "8080:8080"
     environment:
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0
+    restart: unless-stopped
